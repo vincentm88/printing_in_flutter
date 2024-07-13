@@ -1,0 +1,57 @@
+[
+    {
+      "animal": "Lion",
+      "image": "https://static.wikia.nocookie.net/lionking/images/a/a5/Teen_Muffy.png/revision/latest?cb=20190922162341",
+      "facts": [
+        "Social cats living in prides",
+        "Males have impressive manes",
+        "Cooperative hunters with females leading",
+        "Loudest roar among animals (up to 114 decibels)",
+        "Vulnerable due to habitat loss and conflict with humans"
+      ]
+    },
+    {
+      "animal": "Tiger",
+      "image": "https://i.ytimg.com/vi/J0r482PIbzw/maxresdefault.jpg",
+      "facts": [
+        "Solitary hunters except for mothers with cubs",
+        "Stripes for camouflage while stalking prey",
+        "Excellent swimmers and hunt in water",
+        "Powerful legs for long jumps while attacking",
+        "Endangered due to poaching and habitat loss"
+      ]
+    },
+    {
+      "animal": "Bear",
+      "image": "https://static.wikia.nocookie.net/disney/images/5/52/Baloo_in_The_Jungle_Book_2.jpg/revision/latest?cb=20150917165102",
+      "facts": [
+        "Hibernate during winter surviving on fat reserves",
+        "Omnivores with diet including berries, nuts, and fish",
+        "Exceptional sense of smell for locating food",
+        "Sharp, retractable claws for digging, climbing, and catching prey",
+        "Eight different bear species exist worldwide"
+      ]
+    },
+    {
+      "animal": "Giraffe",
+      "image": "https://bleedingcool.com/wp-content/uploads/2018/01/Toys-R-Us-giraffe-logo-900x900.jpg",
+      "facts": [
+        "Tallest land animal with males reaching up to 19 feet",
+        "Long necks for reaching leaves inaccessible to other animals",
+        "Surprisingly fast sprinters for short bursts (up to 35 mph)",
+        "Long eyelashes for keeping dust and insects out of eyes",
+        "Prehensile tongue up to 18 inches long for grabbing leaves"
+      ]
+    },
+    {
+      "animal": "Zebra",
+      "image": "https://static.wikia.nocookie.net/dreamworks/images/7/78/Marty_Profile.png/revision/latest?cb=20240105224021",
+      "facts": [
+        "Stripes confuse predators by making it difficult to focus",
+        "Highly social animals living in large herds",
+        "Born with brown and white stripes that turn black over time",
+        "Persistent runners that outrun predators with zig-zag patterns",
+        "Use barks, whinnies, and brays to communicate"
+      ]
+    }
+]

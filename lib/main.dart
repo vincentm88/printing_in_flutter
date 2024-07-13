@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
-import 'package:printing/printing.dart';
+import 'package:printing_in_flutter/animal_class.dart';
+import 'package:printing_in_flutter/animal_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Printing in Flutter',
       theme: ThemeData(
         colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 31, 16, 240)),
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 55, 0, 255)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Printing in Flutter'),
@@ -38,44 +37,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    Future<void> printDocument() async {
-      final doc = pw.Document();
-
-      doc.addPage(pw.Page(
-          pageFormat: PdfPageFormat.a4,
-          build: (pw.Context context) {
-            return pw.Center(
-              child: pw.Text('Wow we are printing!'),
-            );
-          }));
-
-      await Printing.layoutPdf(
-        onLayout: (PdfPageFormat format) async => doc.save(),
-      );
-    }
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Lets print something!',
-            ),
-          ],
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          printDocument();
-        },
-        tooltip: 'Print',
-        child: const Icon(Icons.print),
-      ),
-    );
+        body: FutureBuilder<List<Animal>>(
+            future: loadAnimals(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                return Center(child: Text('Error: ${snapshot.error}'));
+              } else {
+                final animals = snapshot.data!;
+                return AnimalPageView(animals: animals);
+              }
+            }));
   }
 }

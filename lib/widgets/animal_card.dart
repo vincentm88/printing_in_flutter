@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:printing_in_flutter/animal_class.dart';
+import 'package:printing_in_flutter/models/animal.dart';
 
 class AnimalCard extends StatelessWidget {
   final Animal animal;

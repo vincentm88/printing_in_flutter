@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:printing_in_flutter/animal_card.dart';
-import 'package:printing_in_flutter/animal_class.dart';
+import 'package:printing_in_flutter/widgets/animal_card.dart';
+import 'package:printing_in_flutter/models/animal.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';

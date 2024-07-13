@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
-
 class Animal {
   final String animal;
   final String image;
@@ -15,10 +12,4 @@ class Animal {
       facts: List<String>.from(json['facts']),
     );
   }
-}
-
-Future<List<Animal>> loadAnimals() async {
-  final jsonString = await rootBundle.loadString('assets/animals.json');
-  final List<dynamic> jsonResponse = json.decode(jsonString);
-  return jsonResponse.map<Animal>((json) => Animal.fromJson(json)).toList();
 }

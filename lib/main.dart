@@ -36,16 +36,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final tagline = 'Lets print something!';
   @override
   Widget build(BuildContext context) {
-    Future<void> printDocument() async {
+    Future<void> printDocument(tagline) async {
       final doc = pw.Document();
 
       doc.addPage(pw.Page(
           pageFormat: PdfPageFormat.a4,
           build: (pw.Context context) {
             return pw.Center(
-              child: pw.Text('Wow we are printing!'),
+              child: pw.Column(
+                children: [
+                  pw.Text(widget.title),
+                  pw.Text(tagline),
+                ],
+              ),
             );
           }));
 
@@ -63,18 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Lets print something!',
+            Text(
+              tagline,
             ),
+            ElevatedButton(
+                onPressed: () {
+                  printDocument(tagline);
+                },
+                child: Icon(Icons.print))
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          printDocument();
-        },
-        tooltip: 'Print',
-        child: const Icon(Icons.print),
       ),
     );
   }
